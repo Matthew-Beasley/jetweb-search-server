@@ -1,4 +1,5 @@
 const google = require('googlethis');
+const bing = require("bing-scraper");
 
 
 const getResults = async (term, page)  => {
@@ -13,7 +14,7 @@ const getResults = async (term, page)  => {
   return response; 
 };
 
-const searchGoogle = async (term, pages) => {
+const googleSearch = async (term, pages) => {
   const promises = [];
   for (let i = 0; i < pages; i++) {
     promises.push(Promise.resolve(getResults(term, i)));
@@ -32,7 +33,28 @@ const searchGoogle = async (term, pages) => {
   return output;
 }
 
+const bingSearch = async (term, pages) => {
+  const query = {
+    "q": term,
+    "lang": "en-US,en;q=0.5",
+    "enforceLanguage": false,
+    "pageCount": pages
+  }
+  return new Promise((resolve, reject) => {
+    bing.search( query, (err, resp) => {
+        if (err) {
+          reject(err)
+        } else {
+          //console.log(resp)
+          resolve(resp)
+        }
+      }
+    )
+  });
+}
 
-module.exports = searchGoogle;
+
+module.exports = googleSearch;
+module.exports = bingSearch;
 
 
