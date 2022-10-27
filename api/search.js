@@ -1,6 +1,6 @@
 const express = require('express');
-const googleSearch = require('./jetweb-search');
-const bingSearch = require('./jetweb-search');
+const googleSearch = require('jetweb-search');
+const bingSearch = require('jetweb-search');
 const searchRouter = express.Router();
 
 
