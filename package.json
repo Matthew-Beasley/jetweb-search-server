@@ -2,6 +2,7 @@
   "name": "jetweb-search",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "scripts": {
     "start": "node server.js",
     "start:server": "nodemon server.js",
@@ -19,9 +20,10 @@
   },
   "homepage": "https://github.com/Matthew-Beasley/jetweb-search#readme",
   "dependencies": {
+    "bing-scraper": "^1.4.11",
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "jetweb-search": "^1.0.6",
+    "googlethis": "^1.6.0",
     "path": "^0.12.7"
   }
 }

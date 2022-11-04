@@ -1,6 +1,5 @@
-const express = require('express');
-const googleSearch = require('jetweb-search');
-const bingSearch = require('jetweb-search');
+import express from 'express';
+import { googleSearch, bingSearch } from './jetweb-search.js';
 const searchRouter = express.Router();
 
 
@@ -22,4 +21,4 @@ searchRouter.get('/google', async (req, res, next) => {
   }
 });
 
-module.exports = searchRouter;
+export default searchRouter;

@@ -1,5 +1,5 @@
-const google = require('googlethis');
-const bing = require("bing-scraper");
+import google from 'googlethis';
+import bing from 'bing-scraper';
 
 
 const getResults = async (term, page)  => {
@@ -54,7 +54,6 @@ const bingSearch = async (term, pages) => {
 }
 
 
-module.exports = googleSearch;
-module.exports = bingSearch;
+export { googleSearch, bingSearch};
 
 
