@@ -2,7 +2,6 @@ import express from 'express';
 import { googleSearch, bingSearch } from './jetweb-search.js';
 const searchRouter = express.Router();
 
-
 searchRouter.get('/bing', async (req, res, next) => {
   try {
     const results = await bingSearch(req.query.term, req.query.pages);

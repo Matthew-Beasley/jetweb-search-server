@@ -1,5 +1,6 @@
 import google from 'googlethis';
-import bing from 'bing-scraper';
+//import bing from 'bing-scraper';
+import search from './bing/index.js';
 
 
 const getResults = async (term, page)  => {
@@ -41,7 +42,7 @@ const bingSearch = async (term, pages) => {
     "pageCount": pages
   }
   return new Promise((resolve, reject) => {
-    bing.search( query, (err, resp) => {
+    search( query, (err, resp) => {
         if (err) {
           reject(err)
         } else {
